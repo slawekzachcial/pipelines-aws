@@ -3,6 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - docker info
       - echo "Check spelling"
       - echo "Check links"
       - echo "Create release"
