@@ -3,8 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Checking spelling ..."
-      - ./pipeline.sh checkSpelling
+      - echo "Checking spelling ..." && ./pipeline.sh checkSpelling
       - echo "Check links"
       - echo "Create release"
       - echo "Publish pages"
