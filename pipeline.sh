@@ -19,8 +19,8 @@ function createReleaseTag {
     local tagName="$2"
 
     if ! getReleaseTag "${commitId}" 1>/dev/null; then
-        echo git tag "${tagName}" "${commitId}"
-        echo git push --tags
+        git tag "${tagName}" "${commitId}"
+        git push --tags
     fi
 }
 
