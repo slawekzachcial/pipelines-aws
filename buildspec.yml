@@ -5,5 +5,5 @@ phases:
     commands:
       - echo "Checking spelling ..." && ./pipeline.sh checkSpelling
       - echo "Checking links ..." && ./pipeline.sh checkLinks
-      - echo "Creating release ..." && ./pipeline.sh createTag "$CODEBUILD_SOURCE_VERSION" "$CODEBUILD_BUILD_NUMBER"
+      - echo "Creating release ..." && ./pipeline.sh createReleaseTag "$CODEBUILD_RESOLVED_SOURCE_VERSION" "$CODEBUILD_BUILD_NUMBER"
       - echo "Publish pages"

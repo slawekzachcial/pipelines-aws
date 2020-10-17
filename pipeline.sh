@@ -14,19 +14,19 @@ function checkLinks {
     echo **/*.md | xargs -n1 docker run --rm -v $PWD:/work:ro -w /work robertbeal/markdown-link-checker
 }
 
-function createTag {
+function createReleaseTag {
     local commitId="$1"
     local tagName="$2"
 
-    if [ ! getReleaseTag "${commitId}" &>/dev/null ]; then
-        git tag "${tagName}" "${commitId}"
-        git push --tags
+    if ! getReleaseTag "${commitId}" 1>/dev/null; then
+        echo git tag "${tagName}" "${commitId}"
+        echo git push --tags
     fi
 }
 
 function getReleaseTag {
     local commitId="$1"
-    git describe --tags --exact-match ${commitId} 2>/dev/null
+    git describe --tags --exact-match "${commitId}" 2>/dev/null
 }
 
 function shouldDeploy {
