@@ -11,7 +11,7 @@ branch into `gh-pages` branch which publishes it to the
 
 The BASH snippets used in various tasks are implemented in `pipeline.sh` script.
 
-The pipeline was intended to have 4 stages
+The pipeline was intended to have four stages
 * Spell check - checks the spelling of all markdown files in this repository
 * Link check - checks the links of all markdown files in this repository
 * Release creation - the pipeline, when run on `main` branch, creates a new Git
