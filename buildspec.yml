@@ -5,6 +5,6 @@ phases:
     commands:
       - echo "Checking spelling ..." && ./pipeline.sh checkSpelling
       - echo "Checking links ..." && ./pipeline.sh checkLinks
-      - env | sort
-      - echo "Creating release ..." && ./pipeline.sh createReleaseTag "${CODEBUILD_RESOLVED_SOURCE_VERSION}" "v${CODEBUILD_BUILD_NUMBER}"
-      - echo "Publish pages"
+      - echo "At this point we would create a git tag and merged main branch to gh-pages branch. Unfortunately AWS CodeBuild does not clone Git repository so no git operation can be performed. It is still possible to 'manually' clone the repository but for this to work the GitHub repo URL would have to be hardcoded somewhere (not provided in environment variables) and in order to push the credentials would have to be handled. All this seems like a ton of work. AWS CodePipeline and CodeBuild are not easily usable in this scenario."
+      - echo "Would normally create release"
+      - echo "Would normally publish pages"
